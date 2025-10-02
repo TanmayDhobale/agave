@@ -223,6 +223,7 @@ fn recv_loop<P: SocketProvider>(
                     } = stats;
 
                     packets_count.fetch_add(len, Ordering::Relaxed);
+                    solana_metrics::agent_push_counter("tpu_packets_total", len as f64);
                     packet_batches_count.fetch_add(1, Ordering::Relaxed);
                     max_channel_len.fetch_max(packet_batch_sender.len(), Ordering::Relaxed);
                     if len == PACKETS_PER_BATCH {

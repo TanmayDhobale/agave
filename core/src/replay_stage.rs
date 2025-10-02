@@ -4353,6 +4353,7 @@ impl ReplayStage {
                 .unwrap()
                 .notify_created_bank(slot, parent.slot());
         }
+        solana_metrics::agent_push_gauge("bank_slot", slot as f64);
         Bank::new_from_parent_with_options(parent, leader, slot, new_bank_options)
     }
 

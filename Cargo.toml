@@ -5,7 +5,7 @@ members = [
     "accounts-cluster-bench",
     "accounts-db",
     "accounts-db/store-histogram",
-    "accounts-db/store-tool",
+    "accounts-db/store-tool", "agave-dashboard-agent",
     "banking-bench",
     "banking-stage-ingress-types",
     "banks-client",
